@@ -53,11 +53,11 @@ actor GitHubAPI {
 
         do {
             let (data, response) = try await session.data(for: request)
-
+            
             guard let http = response as? HTTPURLResponse else {
                 return .failure(.unknown)
             }
-
+            
             switch http.statusCode {
             case 200:
                 do {
